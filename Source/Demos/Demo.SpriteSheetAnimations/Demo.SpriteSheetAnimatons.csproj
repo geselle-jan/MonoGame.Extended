@@ -23,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
     <Prefer32Bit>false</Prefer32Bit>
+    <LangVersion>6</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <Optimize>true</Optimize>
@@ -42,16 +43,16 @@
     <Compile Include="Zombie.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="MonoGame.Framework, Version=3.5.0.1678, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.0.1678\lib\net40\MonoGame.Framework.dll</HintPath>
+    <Reference Include="MonoGame.Framework, Version=3.5.1.1679, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.1.1679\lib\net40\MonoGame.Framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="NVorbis, Version=0.8.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.0.1678\lib\net40\NVorbis.dll</HintPath>
+      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.1.1679\lib\net40\NVorbis.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="OpenTK, Version=1.1.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.0.1678\lib\net40\OpenTK.dll</HintPath>
+      <HintPath>..\..\packages\MonoGame.Framework.DesktopGL.3.5.1.1679\lib\net40\OpenTK.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -66,22 +67,13 @@
     <None Include="Content\Fonts\courier-new-32.fnt" />
     <None Include="Content\Sprites\zombie-animations.aa" />
     <None Include="Content\Tilesets\free-tileset.json" />
-    <None Include="Content\Tilesets\isometric.tmx" />
     <None Include="Content\Tilesets\level01.tmx" />
     <None Include="Content\read-me.md" />
     <None Include="Content\Sprites\fireball.png" />
     <None Include="Content\Fonts\courier-new-32_0.png" />
     <None Include="Content\Tilesets\free-tileset.png" />
     <None Include="Content\Backgrounds\hills.png" />
-    <None Include="Content\Tilesets\isometric_tileset.png" />
-    <None Include="Content\Tilesets\test-tileset.png" />
     <None Include="Content\Sprites\zombie.png" />
-    <None Include="Content\Tilesets\test-tileset-atlas.json" />
-    <None Include="Content\Tilesets\test-tileset-left-down.tmx" />
-    <None Include="Content\Tilesets\test-tileset-left-up.tmx" />
-    <None Include="Content\Tilesets\test-tileset-map1.tmx" />
-    <None Include="Content\Tilesets\test-tileset-right-down.tmx" />
-    <None Include="Content\Tilesets\test-tileset-right-up.tmx" />
     <None Include="Content\Sprites\zombie-atlas.json" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -94,6 +86,18 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MonoGame.Extended.Collisions\MonoGame.Extended.Collisions.csproj">
+      <Project>{02562c6f-5bfb-467e-8a95-68b6ce2d635a}</Project>
+      <Name>MonoGame.Extended.Collisions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame.Extended.Graphics\MonoGame.Extended.Graphics.csproj">
+      <Project>{9b3ab8a1-78aa-471a-afd0-b10b932115bc}</Project>
+      <Name>MonoGame.Extended.Graphics</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\MonoGame.Extended.Tiled\MonoGame.Extended.Tiled.csproj">
+      <Project>{07B2ADE2-73E3-41C4-AEA1-D5566A5AB902}</Project>
+      <Name>MonoGame.Extended.Tiled</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MonoGame.Extended\MonoGame.Extended.csproj">
       <Project>{41724c52-3d50-45bb-81eb-3c8a247eafd1}</Project>
       <Name>MonoGame.Extended</Name>

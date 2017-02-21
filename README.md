@@ -7,8 +7,39 @@ It makes MonoGame more awesome.
 
 MonoGame.Extended is an open source extension library for [MonoGame](http://www.monogame.net/). A collection of classes and extensions to make it easier to make games with MonoGame. 
 
+## Patreon Supporters
+
+Thanks to all those that support the project on Patreon!  Running an open source project can be done on a shoe string budget, but it's certainly not free. A little funding goes a long way. It keeps the build server up and running and let's me devote more of my time to the project. Even just a few supporters really helps.
+
+**What happens to MonoGame.Extended if we don't get the funding?** Never fear. The project won't die. The code will always be safely open sourced on github.
+
+[![image](https://cloud.githubusercontent.com/assets/3201643/17462536/f5608898-5cf3-11e6-8e81-47d6594a8d9c.png)](https://www.patreon.com/craftworkgames)
+
+### Special thanks to the supporters
+
+ - Austin
+ - Ben
+ - Chris
+ - Conor
+ - Iliyan
+ - James
+ - Laurence
+ - Marcel
+ - Mario
+ - Max
+ - [Nathanial](http://www.optimuspi.com/)
+ - Nox
+
+## We're working towards the v0.6 release
+
+There's a lot going on in the `develop` branch right now. We're working towards the next official release (v0.6.xxx). If you want to keep up with the latest and greatest it's recommended that you:
+
+ - [Install a pre-release NuGet package](https://github.com/craftworkgames/MonoGame.Extended/wiki/How-to-use-the-pre-release-NuGet-packages) or;
+ - [Build from source](https://github.com/craftworkgames/MonoGame.Extended/wiki/Building-MonoGame.Extended-from-source)
+
 ## Version 0.5 is available on NuGet
-MonoGame.Extended v0.5 has been published as [a NuGet package](https://www.nuget.org/packages/MonoGame.Extended/) and can be installed now. Please read the [install guide](https://github.com/craftworkgames/MonoGame.Extended/wiki/How-to-install-MonoGame.Extended) to setup the Pipeline tool.
+
+MonoGame.Extended v0.5 was published on 8th April 2016 as [a NuGet package](https://www.nuget.org/packages/MonoGame.Extended/). Please read the [install guide](https://github.com/craftworkgames/MonoGame.Extended/wiki/How-to-install-MonoGame.Extended) to setup the Pipeline tool.
 
     Install-Package MonoGame.Extended
 
@@ -41,7 +72,7 @@ The library is distributed as a NuGet package. Add a reference to your project u
 The package comes with 2 DLLs:
 
  - MonoGame.Extended.dll
- - MonoGame.Extedded.Content.Pipeline.dll
+ - MonoGame.Extended.Content.Pipeline.dll
  
 The `MonoGame.Extended.Content.Pipeline.dll` needs to be referenced by the [Pipeline tool](http://www.monogame.net/documentation/?page=Pipeline). To reference the DLL in the Pipeline tool you'll  need to edit your `Content.mgcb` file.
 
@@ -76,11 +107,11 @@ The `MonoGame.Extended.Content.Pipeline.dll` needs to be referenced by the [Pipe
 
 #### GUI System
  - [ ] Controls
-	 - [ ] Label
-	 - [ ] Button (Text or Image)
-	 - [ ] Toggle Button (Checkbox)
+	 - [ ] Label**
+	 - [ ] Button (Text or Image)**
+	 - [ ] Toggle Button (Checkbox)**
 	 - [ ] Progress Bar
-	 - [ ] Text Box
+	 - [ ] Text Box**
 	 - [ ] Image
 	 - [ ] Slider
  - [ ] Layout
@@ -91,8 +122,8 @@ The `MonoGame.Extended.Content.Pipeline.dll` needs to be referenced by the [Pipe
 	 - [ ] Grid
  - [ ] Dialog
  - [ ] Window
- - [ ] Skinning
- - [ ] Events
+ - [ ] Skinning**
+ - [ ] Events**
  - [ ] Drag and Drop
 
 #### Particle System
@@ -148,4 +179,5 @@ MonoGame.Extended is released under the [The MIT License (MIT)](https://github.c
  - Matthew-Davey for letting us use the [Mercury Particle Engine](https://github.com/Matthew-Davey/mercury-particle-engine).
  - John McDonald for [2D XNA Primitives](https://bitbucket.org/C3/2d-xna-primitives/wiki/Home)
  - [LibGDX](https://libgdx.badlogicgames.com) for a whole lot of inspiration.
+ - @prime31 for [Nez](https://github.com/prime31/Nez), which ideas and code bounce back and forth.
  - All of our contributors!

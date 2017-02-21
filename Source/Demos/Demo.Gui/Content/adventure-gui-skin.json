@@ -1,0 +1,90 @@
+﻿{
+  "Name": "adventure",
+  "TextureAtlases": [ "adventure-gui-atlas" ],
+  "Fonts": [ "small-font" ],
+  "Cursor": {
+    "TextureRegion": "cursorSword_silver",
+    "Color": "#aaaaaa"
+  },
+  "NinePatches": [
+    {
+      "TextureRegion": "panel_brown",
+      "Padding": "10"
+    },
+    {
+      "TextureRegion": "panelInset_beige",
+      "Padding": "10"
+    },
+    {
+      "TextureRegion": "grey_textBox",
+      "Padding": "10" 
+    }
+  ],
+  "Styles": [
+    {
+      "Name": "close-button",
+      "Type": "GuiButton",
+      "TextureRegion": "buttonRound_close",
+      "HoverStyle": {
+        "Type": "GuiButton",
+        "Color": "LightGray"
+      }
+    },
+    {
+      "Name": "white-button",
+      "Type": "GuiButton",
+      "TextureRegion": "buttonLong_grey",
+      "TextOffset": "0 -2",
+      "TextColor": "#f4a460ff",
+      "Color": "#8b4513ff",
+      "PressedStyle": {
+        "Type": "GuiButton",
+        "TextureRegion": "buttonLong_grey_pressed",
+        "TextOffset": "0 2"
+      },
+      "HoverStyle": {
+        "Type": "GuiButton",
+        "Color": "#9E4C16ff",
+        "TextColor": "#ffffffff"
+      }
+    },
+    {
+      "Name": "checkbox",
+      "Type": "GuiCheckBox",
+      "TextureRegion": "checkBox_beige_unchecked",
+      "CheckedStyle": {
+        "Type": "GuiCheckBox",
+        "TextureRegion": "checkBox_beige_checked"
+      }
+    },
+
+    {
+      "Name": "brown-panel",
+      "Type": "GuiPanel",
+      "TextureRegion": "panel_brown",
+      "Size": "400 300"
+    },
+    {
+      "Name": "beige-inset-panel",
+      "Type": "GuiPanel",
+      "TextureRegion": "panelInset_beige",
+      "Size": "385 280"
+    },
+    {
+      "Name": "label",
+      "Type": "GuiLabel",
+      "TextColor": "#444444"
+    },
+    {
+      "Name": "monogame-title",
+      "Type": "GuiImage",
+      "TextureRegion": "monogame-title"
+    },
+    {
+      "Name": "text-box",
+      "Type": "GuiTextBox",
+      "TextureRegion": "grey_textBox",
+      "TextColor": "#444444"
+    }
+  ]
+}

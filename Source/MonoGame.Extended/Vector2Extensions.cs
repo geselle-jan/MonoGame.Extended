@@ -6,51 +6,83 @@ namespace MonoGame.Extended
 {
     public static class Vector2Extensions
     {
-        public static bool EqualsWithTolerance(this Vector2 vector2, Vector2 other, float tolerance = 0.00001f)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 Round(this Vector2 value, int digits, MidpointRounding mode)
         {
-            return Math.Abs(vector2.X - other.X) <= tolerance && Math.Abs(vector2.Y - other.Y) <= tolerance;
+            var x = (float)Math.Round(value.X, digits, mode);
+            var y = (float)Math.Round(value.Y, digits, mode);
+            return new Vector2(x, y);
         }
 
-        public static Vector2 Rotate(this Vector2 vector2, float radians)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 Round(this Vector2 value, int digits)
         {
-            var cos = (float)Math.Cos(radians);
-            var sin = (float)Math.Sin(radians);
-            return new Vector2(vector2.X * cos - vector2.Y * sin, vector2.X * sin + vector2.Y * cos);
+            var x = (float)Math.Round(value.X, digits);
+            var y = (float)Math.Round(value.Y, digits);
+            return new Vector2(x, y);
         }
 
-        public static Vector2 NormalizedCopy(this Vector2 vector2)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 Round(this Vector2 value)
         {
-            var newVector2 = new Vector2(vector2.X, vector2.Y);
+            var x = (float)Math.Round(value.X);
+            var y = (float)Math.Round(value.Y);
+            return new Vector2(x, y);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool EqualsWithTolerence(this Vector2 value, Vector2 otherValue, float tolerance = 0.00001f)
+        {
+            return (Math.Abs(value.X - otherValue.X) <= tolerance) && (Math.Abs(value.Y - otherValue.Y) <= tolerance);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 Rotate(this Vector2 value, float radians)
+        {
+            var cos = (float) Math.Cos(radians);
+            var sin = (float) Math.Sin(radians);
+            return new Vector2(value.X*cos - value.Y*sin, value.X*sin + value.Y*cos);
+        }
+
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 NormalizedCopy(this Vector2 value)
+        {
+            var newVector2 = new Vector2(value.X, value.Y);
             newVector2.Normalize();
             return newVector2;
         }
 
-        public static Vector2 PerpendicularClockwise(this Vector2 vector2)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 PerpendicularClockwise(this Vector2 value)
         {
-            return new Vector2(-vector2.Y, vector2.X);
+            return new Vector2(value.Y, -value.X);
         }
 
-        public static Vector2 PerpendicularCounterClockwise(this Vector2 vector2)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 PerpendicularCounterClockwise(this Vector2 value)
         {
-            return new Vector2(vector2.Y, -vector2.X);
+            return new Vector2(-value.Y, value.X);
         }
 
-        public static Vector2 Truncate(this Vector2 vector2, float maxLength)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static Vector2 Truncate(this Vector2 value, float maxLength)
         {
-            if (vector2.LengthSquared() > maxLength * maxLength)
-                return vector2.NormalizedCopy() * maxLength;
+            if (value.LengthSquared() > maxLength*maxLength)
+                return value.NormalizedCopy()*maxLength;
 
-            return vector2;
+            return value;
         }
 
-        public static bool IsNaN(this Vector2 vector2)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static bool IsNaN(this Vector2 value)
         {
-            return float.IsNaN(vector2.X) || float.IsNaN(vector2.Y);
+            return float.IsNaN(value.X) || float.IsNaN(value.Y);
         }
 
-        public static float ToAngle(this Vector2 vector2)
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        public static float ToAngle(this Vector2 value)
         {
-            return (float)Math.Atan2(vector2.X, -vector2.Y);
+            return (float) Math.Atan2(value.X, -value.Y);
         }
 
         /// <summary>
@@ -124,7 +156,7 @@ namespace MonoGame.Extended
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Dot(this Vector2 vector1, Vector2 vector2)
         {
-            return vector1.X * vector2.X + vector1.Y * vector2.Y;
+            return vector1.X*vector2.X + vector1.Y*vector2.Y;
         }
 
         /// <summary>
@@ -167,9 +199,9 @@ namespace MonoGame.Extended
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float ScalarProjectOnto(this Vector2 vector1, Vector2 vector2)
         {
-            var dotNumerator = vector1.X * vector2.X + vector1.Y * vector2.Y;
-            var lengthSquaredDenominator = vector2.X * vector2.X + vector2.Y * vector2.Y;
-            return dotNumerator / (float)Math.Sqrt(lengthSquaredDenominator);
+            var dotNumerator = vector1.X*vector2.X + vector1.Y*vector2.Y;
+            var lengthSquaredDenominator = vector2.X*vector2.X + vector2.Y*vector2.Y;
+            return dotNumerator/(float) Math.Sqrt(lengthSquaredDenominator);
         }
 
         /// <summary>
@@ -201,9 +233,9 @@ namespace MonoGame.Extended
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static Vector2 ProjectOnto(this Vector2 vector1, Vector2 vector2)
         {
-            var dotNumerator = vector1.X * vector2.X + vector1.Y * vector2.Y;
-            var lengthSquaredDenominator = vector2.X * vector2.X + vector2.Y * vector2.Y;
-            return dotNumerator / lengthSquaredDenominator * vector2;
+            var dotNumerator = vector1.X*vector2.X + vector1.Y*vector2.Y;
+            var lengthSquaredDenominator = vector2.X*vector2.X + vector2.Y*vector2.Y;
+            return dotNumerator/lengthSquaredDenominator*vector2;
         }
     }
 }
